@@ -1,0 +1,427 @@
+/* ===== ESTILOS GLOBALES Y VARIABLES ===== */
+:root {
+    --color-primario: #8B4513; /* Un marrón tierra, muy tradicional */
+    --color-secundario: #D2B48C; /* Un beige/tan claro */
+    --color-fondo: #F5F5DC;      /* Un fondo beige muy claro */
+    --color-texto: #333;
+    --color-blanco: #FFFFFF;
+    --fuente-titulos: 'Georgia', 'Times New Roman', serif;
+    --fuente-texto: 'Helvetica', 'Arial', sans-serif;
+    
+    /* Variables para el Carrusel */
+    --swiper-navigation-color: var(--color-blanco);
+    --swiper-pagination-color: var(--color-blanco);
+    --swiper-navigation-size: 30px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fuente-texto);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-primario);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--color-secundario);
+    display: inline-block;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.seccion-clara {
+    background-color: var(--color-blanco);
+}
+
+/* ===== ENCABEZADO Y NAVEGACIÓN ===== */
+header {
+    background-color: var(--color-blanco);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-family: var(--fuente-titulos);
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--color-primario);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-primario);
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-primario);
+}
+
+/* ===== SECCIÓN INICIO (HERO) ===== */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/grupo-en-escenario.jpg') no-repeat center center/cover;
+    height: 100vh;
+    color: var(--color-blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 70px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    color: var(--color-blanco);
+    border: none;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #a0522d;
+}
+
+/* ===== SECCIÓN SOBRE NOSOTROS ===== */
+#sobre-nosotros p {
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+.link-interno {
+    color: var(--color-primario);
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px dashed var(--color-primario);
+}
+.link-interno:hover {
+    color: var(--color-texto);
+    border-bottom-style: solid;
+}
+
+/* ===== SECCIÓN FUNDADOR ===== */
+.fundador-contenido {
+    display: flex;
+    gap: 40px;
+    text-align: left;
+}
+
+.fundador-bio {
+    flex: 2;
+}
+
+.fundador-bio p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.fundador-perfil {
+    float: left;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border: 3px solid var(--color-secundario);
+}
+
+.fundador-aside {
+    flex: 1;
+}
+
+.fundador-foto-aside {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.certificados-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.certificados-grid img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.certificados-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* ===== SECCIÓN GALERÍA (Videos) ===== */
+#galeria h3 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.8rem;
+    color: var(--color-primario);
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.galeria-item.video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.galeria-item.video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.galeria-item.video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #000;
+}
+
+#galeria h3.titulo-videos {
+    margin-top: 60px; /* Espacio entre carrusel y videos */
+}
+
+/* ===== SECCIÓN CONTACTO ===== */
+.social-links {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    font-size: 2.5rem;
+    color: var(--color-primario);
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--color-texto);
+}
+
+.info-contacto p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.info-contacto i {
+    color: var(--color-primario);
+    margin-right: 10px;
+}
+
+/* ===== PIE DE PÁGINA ===== */
+footer {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* ===== DISEÑO RESPONSIVE (PARA CELULARES) ===== */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        background-color: var(--color-blanco);
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+        transition: left 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        left: 0;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .fundador-contenido {
+        flex-direction: column;
+    }
+
+    .fundador-bio {
+        text-align: center;
+    }
+
+    .fundador-perfil {
+        float: none;
+        margin: 0 auto 20px auto;
+    }
+    
+    .fundador-aside {
+        margin-top: 30px;
+    }
+} 
+
+
+/* =================================
+ESTILOS PARA EL CARRUSEL (SWIPER)
+=================================
+*/
+.galeria-carrusel {
+    width: 100%;
+    height: 550px; /* Define la altura de tu carrusel. Ajusta esto a tu gusto */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background: #222;
+}
+
+.galeria-carrusel .swiper-slide {
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.galeria-carrusel .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.swiper-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--color-blanco);
+    padding: 12px;
+    font-family: var(--fuente-texto);
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.galeria-carrusel:hover .swiper-caption {
+    opacity: 1;
+}
+
+.galeria-carrusel .swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.galeria-carrusel .swiper-pagination-bullet-active {
+    background-color: var(--color-blanco);
+}
