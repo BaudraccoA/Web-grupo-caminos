@@ -425,3 +425,99 @@ ESTILOS PARA EL CARRUSEL (SWIPER)
 .galeria-carrusel .swiper-pagination-bullet-active {
     background-color: var(--color-blanco);
 }
+
+/* ==================================== */
+/* ESTILOS PARA LA SECCIÓN DE FECHAS */
+/* ==================================== */
+
+.fechas-lista {
+    margin-top: 40px;
+    display: grid;
+    gap: 30px; /* Espacio vertical entre cada fecha */
+}
+
+.fecha-item {
+    background-color: #fff; /* Fondo blanco para el recuadro de cada fecha */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    display: flex; /* Para alinear el día, la info y el botón */
+    align-items: center; /* Centrado vertical */
+    transition: transform 0.3s ease;
+}
+
+.fecha-item:hover {
+    transform: translateY(-5px); /* Pequeño efecto al pasar el mouse */
+}
+
+/* Estilo del recuadro de la fecha (día y mes) */
+.fecha-dia {
+    text-align: center;
+    background-color: var(--color-principal); /* Rojo/Color principal */
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    min-width: 80px; /* Asegura un tamaño fijo */
+    margin-right: 25px;
+    line-height: 1.2;
+}
+
+.fecha-dia .mes {
+    font-size: 0.9em;
+    font-weight: 600;
+    display: block;
+}
+
+.fecha-dia .dia {
+    font-size: 1.8em;
+    font-weight: bold;
+    display: block;
+}
+
+/* Estilo de la información del evento */
+.fecha-info {
+    flex-grow: 1; /* Ocupa todo el espacio restante */
+    margin-right: 20px;
+}
+
+.fecha-info h3 {
+    margin: 0 0 5px 0;
+    color: var(--color-secundario); /* Color de énfasis */
+    font-size: 1.3em;
+}
+
+.fecha-info p {
+    margin: 3px 0;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.fecha-info .horario {
+    font-weight: 600;
+    color: var(--color-principal);
+}
+
+/* Ajuste para dispositivos móviles */
+@media (max-width: 768px) {
+    .fecha-item {
+        flex-direction: column; /* Apila los elementos en móvil */
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .fecha-dia {
+        min-width: 100px;
+        margin-bottom: 15px;
+        margin-right: 0;
+    }
+
+    .fecha-info {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .fecha-item .btn {
+        width: 100%; /* El botón ocupa todo el ancho */
+        text-align: center;
+    }
+}
